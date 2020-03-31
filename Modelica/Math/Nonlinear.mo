@@ -639,7 +639,7 @@ See the examples in <a href=\"modelica://Modelica.Math.Nonlinear.Examples\">Mode
     output Real u "Value of independent variable u so that f(u) = 0";
 
   protected
-    constant Real eps=Modelica.Constants.eps "machine epsilon";
+    constant Real eps=Modelica.Constants.eps "Machine epsilon";
     Real a=u_min "Current best minimum interval value";
     Real b=u_max "Current best maximum interval value";
     Real c "Intermediate point a <= c <= b";
@@ -785,8 +785,8 @@ function. The solver function is a direct mapping of the Algol 60 procedure
 <dt> Brent R.P.:</dt>
 <dd> <strong>Algorithms for Minimization without derivatives</strong>.
      Prentice Hall, 1973, pp. 58-59.<br>
-     Download: <a href=\"http://wwwmaths.anu.edu.au/~brent/pd/rpb011i.pdf\">http://wwwmaths.anu.edu.au/~brent/pd/rpb011i.pdf</a><br>
-     Errata and new print: <a href=\"http://wwwmaths.anu.edu.au/~brent/pub/pub011.html\">http://wwwmaths.anu.edu.au/~brent/pub/pub011.html</a>
+     Download: <a href=\"https://maths-people.anu.edu.au/~brent/pd/rpb011i.pdf\">https://maths-people.anu.edu.au/~brent/pd/rpb011i.pdf</a><br>
+     Errata and new print: <a href=\"https://maths-people.anu.edu.au/~brent/pub/pub011.html\">https://maths-people.anu.edu.au/~brent/pub/pub011.html</a>
 </dd>
 </dl>
 </blockquote>

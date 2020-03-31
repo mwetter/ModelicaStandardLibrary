@@ -1463,7 +1463,7 @@ connector is not connected).
           Documentation(info="<html>
 <p>
 This package was used in Modelica.Media of MSL &le; 3.2.3 and was replaced by
-by function <a href=\"modelica://Modelica.Math.Nonlinear.solveOneNonlinearEquation\">
+the function <a href=\"modelica://Modelica.Math.Nonlinear.solveOneNonlinearEquation\">
 Modelica.Math.Nonlinear.solveOneNonlinearEquation</a>.
 </p>
 
@@ -2285,7 +2285,7 @@ u = {0.837, -0.478, -0.239, -0.119};
 
     The matrix P is represented in jpvt as follows: If
        jpvt(j) = i
-    then the jth column of P is the with canonical unit vector.
+    then the jth column of P is the ith canonical unit vector.
 "));
         end dgeqpf;
       end LAPACK;
@@ -2838,8 +2838,8 @@ Obsolete saliency cage model, see
   end Magnetic;
   annotation (uses(Modelica(version="4.0.0")),
               version="4.0.0",
-              versionDate="2020-02-12",
-              dateModified = "2020-02-12 19:00:00Z",
+              versionDate="2020-03-11",
+              dateModified = "2020-03-11 19:00:00Z",
               revisionId="$Format:%h %ci$",
 Documentation(info="<html>
 <p>

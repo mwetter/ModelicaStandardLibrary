@@ -5943,7 +5943,7 @@ white-space:nowrap;
         industrial use. This new industrial standard is called \"IAPWS Industrial
         Formulation for the Thermodynamic Properties of Water and Steam\" (IAPWS-IF97).
         The formulation IAPWS-IF97 replaces the previous industrial standard IFC-67.</p>
-        <p>Based on this new formulation, a new steam table, titled \"<a href=\"http://www.springer.de/cgi-bin/search_book.pl?isbn=3-540-64339-7\">Properties of Water and Steam</a>\" by W. Wagner and A. Kruse, was published by
+        <p>Based on this new formulation, a new steam table, titled \"<a href=\"https://doi.org/10.1007/978-3-662-03529-0\">Properties of Water and Steam</a>\" by W. Wagner and A. Kruse, was published by
         the Springer-Verlag, Berlin - New-York - Tokyo in April 1998. This
         steam table, ref. <a href=\"#steamprop\">[1]</a> is bilingual (English /
         German) and contains a complete description of the equations of
@@ -6331,8 +6331,8 @@ of Water and Steam. ASME Journal of Engineering for Gas Turbines and Power 122 (
     aux.p := max(p, 611.657);
     aux.h := max(h, 1e3);
     aux.R_s := BaseIF97.data.RH2O;
-    aux.vt := 0.0 "initialized in case it is not needed";
-    aux.vp := 0.0 "initialized in case it is not needed";
+    aux.vt := 0.0 "Initialized in case it is not needed";
+    aux.vp := 0.0 "Initialized in case it is not needed";
     if (aux.region == 1) then
       aux.T := BaseIF97.Basic.tph1(aux.p, aux.h);
       g := BaseIF97.Basic.g1(p, aux.T);
@@ -6481,8 +6481,8 @@ of Water and Steam. ASME Journal of Engineering for Gas Turbines and Power 122 (
     aux.p := p;
     aux.s := s;
     aux.R_s := BaseIF97.data.RH2O;
-    aux.vt := 0.0 "initialized in case it is not needed";
-    aux.vp := 0.0 "initialized in case it is not needed";
+    aux.vt := 0.0 "Initialized in case it is not needed";
+    aux.vp := 0.0 "Initialized in case it is not needed";
     if (aux.region == 1) then
       aux.T := BaseIF97.Basic.tps1(p, s);
       g := BaseIF97.Basic.g1(p, aux.T);
@@ -7184,8 +7184,8 @@ of Water and Steam. ASME Journal of Engineering for Gas Turbines and Power 122 (
     aux.R_s := BaseIF97.data.RH2O;
     aux.p := p;
     aux.T := T;
-    aux.vt := 0.0 "initialized in case it is not needed";
-    aux.vp := 0.0 "initialized in case it is not needed";
+    aux.vt := 0.0 "Initialized in case it is not needed";
+    aux.vp := 0.0 "Initialized in case it is not needed";
     if (aux.region == 1) then
       g := BaseIF97.Basic.g1(p, T);
       aux.h := aux.R_s*aux.T*g.tau*g.gtau;
@@ -7618,8 +7618,8 @@ of Water and Steam. ASME Journal of Engineering for Gas Turbines and Power 122 (
     aux.R_s := BaseIF97.data.RH2O;
     aux.rho := rho;
     aux.T := T;
-    aux.vt := 0.0 "initialized in case it is not needed";
-    aux.vp := 0.0 "initialized in case it is not needed";
+    aux.vt := 0.0 "Initialized in case it is not needed";
+    aux.vp := 0.0 "Initialized in case it is not needed";
     if (aux.region == 1) then
       (aux.p,error) := BaseIF97.Inverses.pofdt125(
           d=rho,

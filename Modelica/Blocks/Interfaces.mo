@@ -500,7 +500,7 @@ generated signal.
           rotation=270)));
     RealOutput y "Connector of actuator output signal" annotation (Placement(
           transformation(extent={{100,-10},{120,10}})));
-    annotation (                                      Documentation(info="<html>
+    annotation (Documentation(info="<html>
 <p>
 Block has two continuous Real input signals and one
 continuous Real output signal. The block is designed
@@ -524,7 +524,7 @@ to be used as base class for a corresponding controller.
           rotation=270)));
     RealOutput y[ny] "Connector of actuator output signals" annotation (
         Placement(transformation(extent={{100,-10},{120,10}})));
-    annotation (                                      Documentation(info="<html>
+    annotation (Documentation(info="<html>
 <p>
 Block has two continuous Real input signal vectors and one
 continuous Real output signal vector. The block is designed
@@ -655,7 +655,7 @@ See the base-class <a href=\"modelica://Modelica.Blocks.Interfaces.DiscreteBlock
     connect(u_s, sampler_s.u) annotation (Line(points={{-120,0},{-102,0}}));
     connect(u_m, sampler_m.u)
       annotation (Line(points={{0,-120},{0,-111},{0,-102}}));
-    annotation (             Documentation(info="<html>
+    annotation (Documentation(info="<html>
 <p>
 Block has two Real input signals and one
 Real output signal
@@ -1399,7 +1399,7 @@ of noise blocks.
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -1418,11 +1418,11 @@ of noise blocks.
   potential, 1st derivative of potential, and 2nd derivative of potential as outputs (especially useful for FMUs)"
       parameter Boolean use_pder=true "Use output for 1st derivative of potential"
         annotation(Evaluate=true, HideResult=true, choices(checkBox=true));
-      parameter Boolean use_pder2=true "Use output for 2nd derivative of potential (only if 1st derivate is used, too)"
+      parameter Boolean use_pder2=true "Use output for 2nd derivative of potential (only if 1st derivative is used, too)"
         annotation(Evaluate=true, HideResult=true, choices(checkBox=true));
       parameter Boolean use_fder=true "Use input for 1st derivative of flow"
         annotation(Evaluate=true, HideResult=true, choices(checkBox=true));
-      parameter Boolean use_fder2=true "Use input for 2nd derivative of flow (only if 1st derivate is used, too)"
+      parameter Boolean use_fder2=true "Use input for 2nd derivative of flow (only if 1st derivative is used, too)"
         annotation(Evaluate=true, HideResult=true, choices(checkBox=true));
       Modelica.Blocks.Interfaces.RealOutput p "Output for potential"
         annotation (Placement(transformation(extent={{20,70},{40,90}})));
@@ -1447,10 +1447,10 @@ of noise blocks.
       parameter String Name_f="f" "Name of flow variable";
       parameter String Name_fder="der(f)" "Name of 1st derivative of flow variable";
       parameter String Name_fder2="der2(f)" "Name of 2nd derivative of flow variable";
-      Real y "output signal" annotation(HideResult=true);
+      Real y "Output signal" annotation(HideResult=true);
       Modelica.Blocks.Interfaces.RealOutput y1 "Optional 1st derivative of output" annotation(HideResult=true);
       Modelica.Blocks.Interfaces.RealOutput y2 "Optional 2nd derivative of output" annotation(HideResult=true);
-      Real u "input signal" annotation(HideResult=true);
+      Real u "Input signal" annotation(HideResult=true);
       Modelica.Blocks.Interfaces.RealInput u1 "Optional 1st derivative of input" annotation (HideResult=true);
       Modelica.Blocks.Interfaces.RealInput u2 "Optional 2nd derivative of input" annotation (HideResult=true);
     equation
@@ -1513,7 +1513,7 @@ of noise blocks.
 Adaptor between a physical connector and a signal representation of the connector signals.
 This component is used to provide a pure signal interface around a physical model
 and export this model in form of an input/output block,
-especially as FMU (<a href=\"https://www.fmi-standard.org\">Functional Mock-up Unit</a>).
+especially as FMU (<a href=\"https://fmi-standard.org\">Functional Mock-up Unit</a>).
 </p>
 <p>
 This adaptor has flow, optional 1st derivative of flow, and optional 2nd derivative of flow as input and
@@ -1530,11 +1530,11 @@ Note, the input signals must be consistent to each other
   flow, 1st derivative of flow, and 2nd derivative of flow as outputs (especially useful for FMUs)"
       parameter Boolean use_pder=true "Use input for 1st derivative of potential"
         annotation(Evaluate=true, HideResult=true, choices(checkBox=true));
-      parameter Boolean use_pder2=true "Use input for 2nd derivative of potential (only if 1st derivate is used, too)"
+      parameter Boolean use_pder2=true "Use input for 2nd derivative of potential (only if 1st derivative is used, too)"
         annotation(Evaluate=true, HideResult=true, choices(checkBox=true));
       parameter Boolean use_fder=true "Use output for 1st derivative of flow"
         annotation(Evaluate=true, HideResult=true, choices(checkBox=true));
-      parameter Boolean use_fder2=true "Use output for 2nd derivative of flow (only if 1st derivate is used, too)"
+      parameter Boolean use_fder2=true "Use output for 2nd derivative of flow (only if 1st derivative is used, too)"
         annotation(Evaluate=true, HideResult=true, choices(checkBox=true));
       Modelica.Blocks.Interfaces.RealInput p "Input for potential"
         annotation (Placement(transformation(extent={{-40,70},{-20,90}})));
@@ -1559,10 +1559,10 @@ Note, the input signals must be consistent to each other
       parameter String Name_f="f" "Name of flow variable";
       parameter String Name_fder="der(f)" "Name of 1st derivative of flow variable";
       parameter String Name_fder2="der2(f)" "Name of 2nd derivative of flow variable";
-      Real y "output signal" annotation(HideResult=true);
+      Real y "Output signal" annotation(HideResult=true);
       Modelica.Blocks.Interfaces.RealOutput y1 "Optional 1st derivative of output" annotation(HideResult=true);
       Modelica.Blocks.Interfaces.RealOutput y2 "Optional 2nd derivative of output" annotation(HideResult=true);
-      Real u "input signal" annotation(HideResult=true);
+      Real u "Input signal" annotation(HideResult=true);
       Modelica.Blocks.Interfaces.RealInput u1 "Optional 1st derivative of input" annotation (HideResult=true);
       Modelica.Blocks.Interfaces.RealInput u2 "Optional 2nd derivative of input" annotation (HideResult=true);
     equation
@@ -1625,7 +1625,7 @@ Note, the input signals must be consistent to each other
 Adaptor between a physical connector and a signal representation of the connector signals.
 This component is used to provide a pure signal interface around a physical model
 and export this model in form of an input/output block,
-especially as FMU (<a href=\"https://www.fmi-standard.org\">Functional Mock-up Unit</a>).
+especially as FMU (<a href=\"https://fmi-standard.org\">Functional Mock-up Unit</a>).
 </p>
 <p>
 This adaptor has potential, optional 1st derivative of potential, and optional 2nd derivative of potential as input and
@@ -1710,7 +1710,7 @@ This package contains partial adaptors to implement adaptors in various domains
 between a physical connector and a signal representation of the connector signals.
 This component is used to provide a pure signal interface around a physical model
 and export this model in form of an input/output block,
-especially as FMU (<a href=\"https://www.fmi-standard.org\">Functional Mock-up Unit</a>).
+especially as FMU (<a href=\"https://fmi-standard.org\">Functional Mock-up Unit</a>).
 </p>
 </html>"));
   end Adaptors;

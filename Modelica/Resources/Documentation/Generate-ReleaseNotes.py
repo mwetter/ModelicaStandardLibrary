@@ -40,11 +40,14 @@ def main(dir, milestone, version):
     r = requests.get(url, params=p)
     data = json.loads(r.text or r.content)
     issues = defaultdict(lambda: defaultdict(list))
-    cnt = 0
+    cntTotal = 0
+    cntPR = 0
 
     while True:
         for issue in data:
-            cnt = cnt + 1
+            cntTotal = cntTotal + 1
+            if 'pull_request' in issue:
+                cntPR = cntPR + 1
             labels = [l['name'] for l in issue['labels']]
             # Escape asterisk
             for i, l in enumerate(labels):
@@ -91,7 +94,7 @@ def main(dir, milestone, version):
     with open(os.path.join(path, 'ResolvedGitHubIssues.md'), 'w') as f:
         url = 'https://github.com/{0}/{1}/milestone/{2}'.format(owner, repo, milestone)
         f.write('# GitHub issues resolved for v{0}\n'.format(version))
-        f.write('As part of this release {0} [issues]({1}) were closed.\n\n'.format(cnt, url))
+        f.write('As part of this release {0} [issues]({1}) (including {2} pull requests (PR)) were closed.\n\n'.format(cntTotal, url, cntPR))
         pattern = r'[\#\1](https://github.com/{0}/{1}/issues/\1)'.format(owner, repo)
         for label, data in sorted(issues.items()):
             f.write('## {0}\n'.format(label[3:]))

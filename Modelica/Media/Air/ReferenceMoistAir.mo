@@ -61,7 +61,7 @@ package ReferenceMoistAir
       "Steam water mass fraction of saturation boundary in kg_water/kg_moistair";
     Real x_sat
       "Steam water mass content of saturation boundary in kg_water/kg_dryair";
-    AbsolutePressure p_steam_sat "partial saturation pressure of steam";
+    AbsolutePressure p_steam_sat "Partial saturation pressure of steam";
   equation
     assert(T >= 143.15 and T <= 2000,
       "Temperature T is not in the allowed range 143.15 K <= (T =" + String(T)
@@ -205,7 +205,7 @@ package ReferenceMoistAir
   end setSmoothState;
 
   function Xsaturation
-    "Return absolute humitity per unit mass of moist air at saturation as a function of the thermodynamic state record"
+    "Return absolute humidity per unit mass of moist air at saturation as a function of the thermodynamic state record"
     extends Modelica.Icons.Function;
     input ThermodynamicState state "Thermodynamic state record";
     output MassFraction X_sat "Steam mass fraction of sat. boundary";
@@ -217,7 +217,7 @@ package ReferenceMoistAir
   end Xsaturation;
 
   function xsaturation
-    "Return absolute humitity per unit mass of dry air at saturation as a function of the thermodynamic state record"
+    "Return absolute humidity per unit mass of dry air at saturation as a function of the thermodynamic state record"
     extends Modelica.Icons.Function;
     input ThermodynamicState state "Thermodynamic state record";
     output MassFraction x_sat "Absolute humidity per unit mass of dry air";
@@ -2683,14 +2683,14 @@ for region 2.
 </html>"));
     end pds_pT;
 
-    function pd_pTX "partial pressure of steam"
+    function pd_pTX "Partial pressure of steam"
       extends Modelica.Icons.Function;
 
       input SI.AbsolutePressure p "Pressure";
       input SI.Temperature T "Temperature";
       input SI.MassFraction X[:]=Modelica.Media.Air.ReferenceMoistAir.reference_X
         "Mass fractions";
-      output SI.AbsolutePressure pd "partial pressure";
+      output SI.AbsolutePressure pd "Partial pressure";
 
     protected
       Real xw;
@@ -4004,11 +4004,11 @@ The package MoistAir can be used as any other medium model (see <a href=\"modeli
 </tr>
 <tr>
 <td>x<sub>w</sub></td>
-<td>Absolutue humidity in kg(water)/kg(dry air)</td>
+<td>Absolute humidity in kg(water)/kg(dry air)</td>
 </tr>
 <tr>
 <td>x<sub>ws</sub></td>
-<td>Absolutue humidity on saturation boundary in kg(water)/kg(dry air)</td>
+<td>Absolute humidity on saturation boundary in kg(water)/kg(dry air)</td>
 </tr>
 <tr>
 <td>&phi;</td>

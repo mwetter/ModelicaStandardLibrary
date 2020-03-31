@@ -21,6 +21,7 @@ package Examples
       Ni=0.1,
       initType=Modelica.Blocks.Types.Init.SteadyState,
       controllerType=Modelica.Blocks.Types.SimpleController.PI,
+      limiter(u(start = 0)),
       Td=0.1) annotation (Placement(transformation(extent={{-56,-20},{-36,0}})));
     Modelica.Mechanics.Rotational.Components.Inertia inertia1(
       phi(fixed=true, start=0),
@@ -1152,7 +1153,7 @@ Thus, we have to sample for a&nbsp;period of <code>n*samplePeriod&nbsp;=&nbsp;1/
 The result file &quot;rectifier6pulseFFTresult.mat&quot; can be used to plot
 amplitudes versus frequencies.
 Note that for each frequency three rows exit: one with amplitude zero,
-one with the calculated amplitude, one with apmplitude zero.
+one with the calculated amplitude, one with amplitude zero.
 Thus, the second column (amplitude) can be easily plotted versus the first column (frequency).
 As expected, one can see the 5<sup>th</sup>, 7<sup>th</sup>, 11<sup>th</sup>,
 13<sup>th</sup>, 17<sup>th</sup>, 19<sup>th</sup>, 23<sup>th</sup>, 25<sup>th</sup>,
@@ -1196,7 +1197,7 @@ Thus, we have to sample for a&nbsp;period of <code>n*samplePeriod = 1/f_res = 0.
 <p>
 The resultfile &quot;rectifier12pulseFFTresult.mat&quot; can be used to plot amplitudes versus frequencies.
 Note that for each frequency three rows exit: one with amplitude zero,
-one with the calculated amplitude, one with apmplitude zero.
+one with the calculated amplitude, one with amplitude zero.
 Thus, the second column (amplitude) can be easily plotted versus the first column (frequency).
 As expected, one can see the 11<sup>th</sup>, 13<sup>th</sup>, 23<sup>th</sup>, 25<sup>th</sup>,
 &hellip; harmonic in the result.
@@ -1500,7 +1501,7 @@ The result of a simulation is shown in the next diagram:
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -1606,7 +1607,7 @@ manualSeed2 will produce exactly the same noise.
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -1674,7 +1675,7 @@ truncated normal distribution has more values centered around the mean value 1.
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -1779,7 +1780,7 @@ distribution have good statistical properties.
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -1883,7 +1884,7 @@ distribution have good statistical properties.
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -1950,7 +1951,7 @@ inputs:
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -1993,7 +1994,7 @@ generator. Simulation results are shown in the next figure:
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -2109,7 +2110,7 @@ enableNoise = false in the globalSeed component.
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -2291,7 +2292,7 @@ This block is demonstrated in the example
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -2362,7 +2363,7 @@ This block is demonstrated in the example
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -2434,7 +2435,7 @@ This block is demonstrated in the example
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -2475,7 +2476,7 @@ random number generator. This block is used in the example
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -2700,7 +2701,7 @@ actuator example
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -2781,7 +2782,7 @@ actuator example
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -2808,7 +2809,7 @@ actuator example
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -2838,7 +2839,7 @@ This package contains utility models that are used for the examples.
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -2864,7 +2865,7 @@ to utilize the blocks from sublibrary
 
 <table border=\"0\">
 <tr><td>
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Logos/dlr_logo.png\" alt=\"DLR logo\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

@@ -2350,7 +2350,7 @@ more of the following changes.
 </html>"));
 end VersionManagement;
 
-class Version_4_0_0 "Version 4.0.0 (February 12, 2020)"
+class Version_4_0_0 "Version 4.0.0 (March 11, 2020)"
   extends Modelica.Icons.ReleaseNotes;
 
   annotation (Documentation(info="<html>
@@ -2360,7 +2360,7 @@ A tested conversion script is provided to transform models and libraries of prev
 Short Overview:
 </p>
 <ul>
-<li>About <a href=\"modelica://Modelica/Resources/Documentation/Version-4.0.0/ResolvedGitHubIssues.html\">512 issues (including pull requests)</a> have been addressed for this release.</li>
+<li>About <a href=\"modelica://Modelica/Resources/Documentation/Version-4.0.0/ResolvedGitHubIssues.html\">603 issues (including pull requests)</a> have been addressed for this release.</li>
 <li>This version is based on the recent Modelica language standard version 3.4.</li>
 <li>The library version (i.e., \"4.0.0\") follows semantic versioning using the convention <code>MAJOR.MINOR.BUGFIX</code>
 (see <a href=\"modelica://Modelica.UsersGuide.ReleaseNotes.VersionManagement\">Version Management</a> for details)
@@ -2403,32 +2403,35 @@ The following <font color=\"blue\"><strong>new components</strong></font> have b
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\" style=\"border-collapse:collapse;\">
 <tr><td colspan=\"2\"><strong>Modelica.Blocks.Sources</strong></td></tr>
 <tr><td>SineVariableFrequencyAndAmplitude<br>CosineVariableFrequencyAndAmplitude</td>
-    <td></td></tr>
+    <td>Added signal sources with variable amplitude and frequency; sine and cosine waveforms are provided.</td></tr>
 <tr><td>Sinc</td>
-    <td></td></tr>
+    <td>Added signal source of <code> amplitude*sin(2*&pi;*f*t)/(2*&pi;*f*t)</code>.</td></tr>
 <tr><td colspan=\"2\"><strong>Modelica.Electrical.Analog.Sources</strong></td></tr>
 <tr><td>SineVoltageVariableFrequencyAndAmplitude<br>CosineVoltageVariableFrequencyAndAmplitude<br>SineCurrentVariableFrequencyAndAmplitude<br>CosineCurrentVariableFrequencyAndAmplitude</td>
-    <td></td></tr>
+    <td>Added voltage and current sources with variable amplitude and frequency; sine and cosine waveforms are provided.</td></tr>
 <tr><td colspan=\"2\"><strong>Modelica.Electrical.Machines.Sensors</strong></td></tr>
 <tr><td>SinCosResolver</td>
-    <td></td></tr>
+    <td>Added resolver with two sine and two cosine tracks to be used in drive control applications.</td></tr>
+<tr><td colspan=\"2\"><strong>Modelica.Electrical.Machines.Utilities</strong></td></tr>
+<tr><td>SwitchYDwithArc</td>
+    <td>Added wye delta switch with arc model and time delay between the two switching events.</td></tr>
 <tr><td colspan=\"2\"><strong>Modelica.Electrical.PowerConverters</strong></td></tr>
 <tr><td>ACAC</td>
-    <td></td></tr>
+    <td>Added single-phase and polyphase triac models (AC/AC converters).</td></tr>
 <tr><td colspan=\"2\"><strong>Modelica.Magnetic.FluxTubes.Shapes.FixedShape</strong></td></tr>
 <tr><td>HollowCylinderCircumferentialFlux<br>Toroid</td>
-    <td></td></tr>
+    <td>Added circumferential flux models of hollow cylinder and toroid with circular cross section.</td></tr>
 <tr><td colspan=\"2\"><strong>Magnetic.QuasiStatic.FluxTubes.Shapes.FixedShape</strong></td></tr>
 <tr><td>HollowCylinderCircumferentialFlux<br>Toroid</td>
-    <td></td></tr>
+    <td>Added circumferential flux models of hollow cylinder and toroid with circular cross section.</td></tr>
 <tr><td colspan=\"2\"><strong>Modelica.Mechanics.MultiBody.Visualizers.Advanced</strong></td></tr>
 <tr><td>Vector</td>
     <td></td></tr>
 <tr><td colspan=\"2\"><strong>Modelica.Mechanics.Translational.Components</strong></td></tr>
 <tr><td>RollingResistance</td>
-    <td></td></tr>
+    <td>Added resistance of a rolling wheel incorporating the inclination and rolling resistance coefficient.</td></tr>
 <tr><td>Vehicle</td>
-    <td></td></tr>
+    <td>Added simple vehicle model considering mass and inertia, drag and rolling resistance, inclination resistance.</td></tr>
 <tr><td colspan=\"2\"><strong>Modelica.Math</strong></td></tr>
 <tr><td>BooleanVectors.andTrue</td>
     <td>Similar to <code>allTrue</code>, but return <code>true</code> on empty input vector.</td></tr>
@@ -2451,6 +2454,15 @@ The following <font color=\"blue\"><strong>existing components</strong></font> h
     <td>Added second derivatives and modified Akima interpolation.</td></tr>
 <tr><td>CombiTable2Ds<br>CombiTable2Dv</td>
     <td>Added second derivatives.</td></tr>
+<tr><td colspan=\"2\"><strong>Modelica.Electrical.Analog.Basic</strong></td></tr>
+<tr><td>Gyrator</td>
+    <td>Serves as generalized gyrator model as IdealGyrator was removed.</td></tr>
+<tr><td colspan=\"2\"><strong>Modelica.Electrical.Analog.Ideal</strong></td></tr>
+<tr><td>IdealizedOpAmpLimited</td>
+    <td>Added homotopy to operational amplifier.</td></tr>
+<tr><td colspan=\"2\"><strong>Modelica.Electrical.Semiconductors</strong></td></tr>
+<tr><td>NPN<br>PNP</td>
+    <td>Added optional substrate connector.</td></tr>
 </table>
 
 <p><br>
@@ -2465,9 +2477,15 @@ The following <font color=\"blue\"><strong>existing components</strong></font> h
     <td>The superfluous parameter <code>deadZoneAtInit</code> has been removed.</td></tr>
 <tr><td>Interfaces.PartialNoise<br>Noise.UniformNoise<br>Noise.NormalNoise<br>Noise.TruncatedNormalNoise<br>Noise.BandLimitedWhiteNoise</td>
     <td>As a side-effect of the updated computation in Modelica.Math.Random.Utilities.automaticLocalSeed the <code>localSeed</code> parameter is computed differently if <code>useAutomaticLocalSeed</code> is set to true.</td></tr>
+<tr><td colspan=\"2\"><strong>Modelica.Electrical.Machines.Utilities</strong></td></tr>
+<tr><td>SwitchYD</td>
+    <td>The <a href=\"modelica://Modelica.Electrical.Polyphase.Ideal.IdealCommutingSwitch\">IdealCommutingSwitch</a> is replaced by an <a href=\"modelica://Modelica.Electrical.Polyphase.Ideal.IdealOpeningSwitch\">IdealOpeningSwitch</a> and an <a href=\"modelica://Modelica.Electrical.Polyphase.Ideal.IdealClosingSwitch\">IdealClosingSwitch</a> to allow a time delay between the two switching actions.</td></tr>
 <tr><td colspan=\"2\"><strong>Modelica.Electrical.Spice3</strong></td></tr>
 <tr><td>Internal.MOS2<br>Semiconductors.M_NMOS2<br>Semiconductors.M_PMOS2</td>
     <td>The final parameter <code>vp</code> has been removed.<br>The obsolete variables <code>cc_obsolete</code>, <code>icqmGB</code>, <code>icqmGS</code>, <code>icqmGD</code>, <code>MOScapgd</code>, <code>MOScapgs</code>, <code>MOScapgb</code>, <code>qm</code> and <code>vDS</code> have been removed.</td></tr>
+<tr><td colspan=\"2\"><strong>Modelica.Magnetic.QuasiStatic.FundamentalWave.Utilities</strong></td></tr>
+<tr><td>SwitchYD</td>
+    <td>The <a href=\"modelica://Modelica.Electrical.QuasiStatic.Polyphase.Ideal.IdealCommutingSwitch\">IdealCommutingSwitch</a> is replaced by an <a href=\"modelica://Modelica.Electrical.QuasiStatic.Polyphase.Ideal.IdealOpeningSwitch\">IdealOpeningSwitch</a> and an <a href=\"modelica://Modelica.Electrical.QuasiStatic.Polyphase.Ideal.IdealClosingSwitch\">IdealClosingSwitch</a> to allow a time delay between the two switching actions.</td></tr>
 <tr><td colspan=\"2\"><strong>Modelica.Mechanics.MultiBody</strong></td></tr>
 <tr><td>Joints.Prismatic</td>
     <td>The superfluous constant <code>s_offset</code> has been removed.</td></tr>
@@ -2492,6 +2510,9 @@ that can lead to wrong simulation results):
 <tr><td colspan=\"2\"><strong>Modelica.Blocks.Math</strong></td></tr>
 <tr><td>Pythagoras</td>
     <td>The case with negative <code>y2</code> was not correctly considered if <code>u1IsHypotenuse</code> is <code>true</code>. This has been corrected.</td></tr>
+<tr><td colspan=\"2\"><strong>Modelica.Electrical.Semiconductors</strong></td></tr>
+<tr><td>Diode</td>
+    <td>Fixed unit error in current equations.</td></tr>
 <tr><td colspan=\"2\"><strong>Modelica.Electrical.Spice3.Additionals</strong></td></tr>
 <tr><td>poly</td>
     <td>The case with one coefficient and one variable was not correctly considered. This has been corrected.</td></tr>
@@ -2514,6 +2535,8 @@ that can lead to wrong simulation results):
 <tr><td>T_ph</td>
     <td>The pressure negligence was not considered. This has been corrected.</td></tr>
 <tr><td colspan=\"2\"><strong>Modelica.Media.R134a.R134a_ph</strong></td></tr>
+<tr><td>setState_pTX</td>
+    <td>Only applicable in one-phase regime: The Newton iteration for the calculation of the density may possibly converge to the wrong root. This has been improved.</td></tr>
 <tr><td>setState_dTX<br>setState_psX</td>
     <td>The calculation was wrong in two-phase regime. This has been corrected.</td></tr>
 <tr><td colspan=\"2\"><strong>Modelica.Utilities.System</strong></td></tr>
@@ -3337,8 +3360,6 @@ tools might not yet supported the complete Modelica package):
 <li> OpenModelica 1.9.0 Beta4+dev (Windows, Linux, Mac)<br>
      Test reports for the daily builds are available
      <a href=\"https://trac.openmodelica.org/OpenModelica/wiki\">here</a>.
-     Test reports of comparisons with Dymola result files are available
-     <a href=\"https://test.openmodelica.org/hudson/job/OpenModelica_TEST_CLANG/lastCompletedBuild/testReport/(root)/simulation_libraries_msl32/\">here</a>.
      </li>
 <li> SimulationX 3.6</li>
 </ul>
@@ -3931,7 +3952,7 @@ to <font color=\"blue\"><strong>existing</strong></font> libraries:
                       Stray Load losses<br>
                       Core losses (only eddy current losses but no hysteresis losses; not for transformers) </td></tr>
 <tr><td> Thermal.* </td>
-    <td> Simple thermal ambients, to be connected to the thermal ports of machines,<br>
+    <td> Simple thermal ambience, to be connected to the thermal ports of machines,<br>
                       as well as material constants and utility functions.</td></tr>
 <tr><td> Icons.* </td>
     <td> Icons for transient and quasi-static electrical machines and transformers.</td></tr>
@@ -5990,7 +6011,7 @@ have been <font color=\"blue\"><strong>improved</strong></font> in a
 
 <tr><td colspan=\"2\"><strong>Math.Vectors.</strong></td></tr>
 <tr><td> normalize</td>
-          <td> Implementation changed, so that the result is awalys continuous<br>
+          <td> Implementation changed, so that the result is always continuous<br>
                                                 (previously, this was not the case for small vectors: normalize(eps,eps)).
                                                 </td></tr>
 
@@ -8130,7 +8151,7 @@ main version number is not changed.
 </p>
 
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
-<tr><td><a href=\"modelica://Modelica.UsersGuide.ReleaseNotes.Version_4_0_0\">Version 4.0.0</a></td><td>February 12, 2020</td></tr>
+<tr><td><a href=\"modelica://Modelica.UsersGuide.ReleaseNotes.Version_4_0_0\">Version 4.0.0</a></td><td>March 11, 2020</td></tr>
 <tr><td><a href=\"modelica://Modelica.UsersGuide.ReleaseNotes.Version_3_2_3\">Version 3.2.3</a></td><td>January 23, 2019</td></tr>
 <tr><td><a href=\"modelica://Modelica.UsersGuide.ReleaseNotes.Version_3_2_2\">Version 3.2.2</a></td><td>April 3, 2016</td></tr>
 <tr><td><a href=\"modelica://Modelica.UsersGuide.ReleaseNotes.Version_3_2_1\">Version 3.2.1</a></td><td>August 14, 2013</td></tr>
@@ -8187,7 +8208,7 @@ class Contact "Contact"
 <dd>email: <a href=\"mailto:Martin.Otter@dlr.de\">Martin.Otter@dlr.de</a></dd>
 </dl>
 <p>Since end of 2007, the development of the sublibraries of package Modelica is organized by personal and/or organizational <strong>library officers</strong> assigned by the Modelica Association. They are responsible for the maintenance and for the further organization of the development. Other persons may also contribute, but the final decision for library improvements and/or changes is performed by the responsible library officer(s). In order that a new sublibrary or a new version of a sublibrary is ready to be released, the responsible library officers report the changes to the members of the Modelica Association and the library is made available for beta testing to interested parties before a final decision. A new release of a sublibrary is formally decided by voting of the Modelica Association members.</p>
-<p>As of January 20th, 2020, the following library officers are assigned:</p>
+<p>As of March 7th, 2020, the following library officers are assigned:</p>
 
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><td><strong>Sublibraries</strong> </td>
@@ -8315,7 +8336,7 @@ class Contact "Contact"
 <td align=\"left\">Christian Kral, Jakub Tobolar</td>
 </tr>
 <tr>
-<td align=\"left\">SIunits</td>
+<td align=\"left\">Units</td>
 <td align=\"left\">Christian Kral, Martin Otter</td>
 </tr>
 <tr>
@@ -8343,7 +8364,11 @@ class Contact "Contact"
 <td align=\"left\">Leo Gall, Martin Otter</td>
 </tr>
 <tr>
-<td align=\"left\">ObsoleteModelica3</td>
+<td align=\"left\">TestConversion4</td>
+<td align=\"left\">Leo Gall, Martin Otter</td>
+</tr>
+<tr>
+<td align=\"left\">ObsoleteModelica4</td>
 <td align=\"left\">Hans Olsson, Martin Otter</td>
 </tr>
 </table>
@@ -8720,8 +8745,8 @@ end UsersGuide;
 annotation (
 preferredView="info",
 version="4.0.0",
-versionDate="2020-02-12",
-dateModified = "2020-02-12 19:00:00Z",
+versionDate="2020-03-11",
+dateModified = "2020-03-11 19:00:00Z",
 revisionId="$Format:%h %ci$",
 uses(Complex(version="4.0.0"), ModelicaServices(version="4.0.0")),
 conversion(

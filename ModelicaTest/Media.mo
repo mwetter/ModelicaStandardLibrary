@@ -918,8 +918,8 @@ is given to compare the approximation.
     model MoistAir "Test Moist Air"
       extends Modelica.Icons.Example;
       package Medium = Modelica.Media.Air.MoistAir "Medium model";
-      SI.Temperature T = 273.15+100;
-      SI.AbsolutePressure p = 2E5-1.5e5*time;
+      SI.Temperature T = 273.15 + 100;
+      SI.AbsolutePressure p = 2e5 - 1.5e5*time;
       Medium.MassFraction X[Medium.nX] = {0.05,0.95};
       Medium.ThermodynamicState state = Medium.setState_pTX(p,T,X);
       SI.SpecificEntropy s = Medium.specificEntropy(state);
@@ -927,7 +927,31 @@ is given to compare the approximation.
       SI.Temperature Tsat = Medium.saturationTemperature(p);
       annotation (experiment(StopTime=1));
     end MoistAir;
-    annotation (Documentation(info="<html>
+
+    model R134a_setState_pTX "Test setState_pTX() of R134a"
+      extends Modelica.Icons.Example;
+      replaceable package Medium = Modelica.Media.R134a.R134a_ph "Medium model";
+      SI.Temperature T = 273.15 + 25;
+      SI.AbsolutePressure p = 10e5 + 20e5*time;
+      Medium.ThermodynamicState state = Medium.setState_pTX(p, T);
+      SI.SpecificEnthalpy h = Medium.specificEnthalpy(state);
+      SI.Density rho = Medium.density(state);
+      SI.DynamicViscosity mu = Medium.dynamicViscosity(state);
+      SI.SpecificHeatCapacity cp = Medium.specificHeatCapacityCp(state);
+      SI.ThermalConductivity k = Medium.thermalConductivity(state);
+      annotation (experiment(StopTime=1));
+    end R134a_setState_pTX;
+
+    model WaterIF97_dewEnthalpy "Test dewEnthalpy of WaterIF97"
+      extends Modelica.Icons.Example;
+      replaceable package Medium = Modelica.Media.Water.WaterIF97_fixedregion "Medium model";
+      SI.Temperature T = 273.15 + 25;
+      SI.AbsolutePressure p = 10e5 + 20e5*time;
+      Medium.ThermodynamicState state = Medium.setState_pTX(p, T);
+      SI.SpecificEnthalpy h_dew = Medium.dewEnthalpy(Medium.SaturationProperties(Tsat=Medium.saturationTemperature(state.p), psat=Medium.pressure(state)));
+      annotation (experiment(StopTime=1));
+    end WaterIF97_dewEnthalpy;
+  annotation (Documentation(info="<html>
 
 </html>"));
   end TestOnly;

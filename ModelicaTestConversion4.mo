@@ -741,7 +741,8 @@ Conversion test for <a href=\"https://github.com/modelica/ModelicaStandardLibrar
 
       model Issue2993 "Conversion test for #2993"
         extends Modelica.Icons.Example;
-        import C = Modelica.Electrical.QuasiStationary.MultiPhase;
+        import C1 = Modelica.Electrical.QuasiStationary.MultiPhase;
+        import C2 = Modelica.Electrical.QuasiStationary.MultiPhase.Blocks.SingleToMultiPhase;
         annotation(experiment(StopTime=1), Documentation(info="<html>
 <p>
 Conversion test for <a href=\"https://github.com/modelica/ModelicaStandardLibrary/issues/2993\">#2993</a>.
@@ -751,6 +752,7 @@ Conversion test for <a href=\"https://github.com/modelica/ModelicaStandardLibrar
 
       model Issue3022SinglePhase "Conversion test for #3022"
         extends Modelica.Icons.Example;
+        import Modelica.Electrical.QuasiStationary.SinglePhase.Interfaces.RelativeSensor;
         constant Integer m=3 "Number of phases";
         import Modelica.Constants.pi;
         parameter Modelica.SIunits.Voltage VRMS=100
@@ -763,6 +765,12 @@ Conversion test for <a href=\"https://github.com/modelica/ModelicaStandardLibrar
         final parameter Modelica.SIunits.ActivePower P=3*R*IRMS^2 "Total active power";
         final parameter Modelica.SIunits.ReactivePower Q=3*(2*pi*f*L)*IRMS^2 "Total reactive power";
         final parameter Modelica.SIunits.ApparentPower S=3*Z*IRMS^2 "Total apparent power";
+        Modelica.SIunits.Angle reference = referenceSensor.y "Reference angle";
+        Modelica.SIunits.AbsoluteActivity frequency = frequencySensor.y "Frequency";
+        Modelica.SIunits.ComplexElectricPotential potential = potentialSensor.y "Potential";
+        Modelica.SIunits.ComplexVoltage voltage = voltageSensor.y "Voltage";
+        Modelica.SIunits.ComplexCurrent current = currentSensor.y "Current";
+        Modelica.SIunits.ComplexPower power = powerSensor.y "Power";
         Modelica.Electrical.QuasiStationary.SinglePhase.Basic.Ground ground annotation (Placement(
               transformation(
               origin={-20,-100},
@@ -834,6 +842,7 @@ Conversion test for <a href=\"https://github.com/modelica/ModelicaStandardLibrar
 
       model Issue3022MultiPhase "Conversion test for #3022"
         extends Modelica.Icons.Example;
+        import Modelica.Electrical.QuasiStationary.MultiPhase.Interfaces.RelativeSensor;
         constant Integer m=3 "Number of phases";
         import Modelica.Constants.pi;
         parameter Modelica.SIunits.Voltage VRMS=100
@@ -846,6 +855,12 @@ Conversion test for <a href=\"https://github.com/modelica/ModelicaStandardLibrar
         final parameter Modelica.SIunits.ActivePower P=3*R*IRMS^2 "Total active power";
         final parameter Modelica.SIunits.ReactivePower Q=3*(2*pi*f*L)*IRMS^2 "Total reactive power";
         final parameter Modelica.SIunits.ApparentPower S=3*Z*IRMS^2 "Total apparent power";
+        Modelica.SIunits.Angle reference = referenceSensor.y "Reference angle";
+        Modelica.SIunits.AbsoluteActivity frequency = frequencySensor.y "Frequency";
+        Modelica.SIunits.ComplexElectricPotential potential[m] = potentialSensor.y "Potential";
+        Modelica.SIunits.ComplexVoltage voltage[m] = voltageSensor.y "Voltage";
+        Modelica.SIunits.ComplexCurrent current[m] = currentSensor.y "Current";
+        Modelica.SIunits.ComplexPower power = powerSensor.y "Power";
         Modelica.Electrical.QuasiStationary.MultiPhase.Sources.VoltageSource sineVoltage(
           final m=m,
           f=f,
@@ -1449,7 +1464,7 @@ Conversion test for <a href=\"https://github.com/modelica/ModelicaStandardLibrar
       equation
         connect(ground.port_p, symmetricCage.port_p) annotation (Line(points={{-20,-10},{-10,-10},{-10,10},{0,10}}, color={255,128,0}));
         connect(ground.port_p, saliencyCage.port_p) annotation (Line(points={{-20,-10},{-10,-10},{-10,-30},{0,-30}}, color={255,128,0}));
-        annotation (          Documentation(info="<html>
+        annotation (Documentation(info="<html>
 <p>
 Conversion test for <a href=\"https://github.com/modelica/ModelicaStandardLibrary/issues/3030\">#3030</a>.
 </p>
@@ -3122,6 +3137,17 @@ Conversion test for <a href=\"https://github.com/modelica/ModelicaStandardLibrar
 </p>
 </html>"));
     end Issue2944;
+
+    model Issue3517 "Conversion test for #3517"
+      extends Modelica.Icons.Example;
+      import SI = Modelica.SIunits;
+      parameter SI.Conversions.NonSIunits.Time_minute p = SI.Conversions.to_minute(42);
+      annotation(experiment(StopTime=1), Documentation(info="<html>
+<p>
+Conversion test for <a href=\"https://github.com/modelica/ModelicaStandardLibrary/issues/3517\">#3517</a>.
+</p>
+</html>"));
+    end Issue3517;
   end SIunits;
   annotation(uses(Modelica(version="3.2.3"), Complex(version="3.2.3")), Documentation(info="<html>
 <p>
