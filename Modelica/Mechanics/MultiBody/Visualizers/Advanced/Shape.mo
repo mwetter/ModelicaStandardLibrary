@@ -47,9 +47,9 @@ The following shapes are supported via
 parameter <strong>shapeType</strong> (e.g., shapeType=\"box\"):<br>&nbsp;
 </p>
 
-<p>
+<div>
 <img src=\"modelica://Modelica/Resources/Images/Mechanics/MultiBody/Visualizers/Shape.png\" alt=\"model Visualizers.FixedShape\">
-</p>
+</div>
 
 <p>&nbsp;<br>
 The dark blue arrows in the figure above are directed along
@@ -75,9 +75,9 @@ Additionally, <strong>external shapes</strong> can be specified as (not all opti
      &lt;Modelica-name&gt; library path with the given relative file name.
      Example:<br> shapeType = \"modelica://Modelica/Resources/Data/Shapes/Engine/piston.dxf\".<br></li>
 
-<li> \"<strong>file:</strong>//&lt;absolute-file-name&gt;\"<br>
+<li> \"<strong>file:</strong>///&lt;absolute-file-name&gt;\"<br>
      characterizes an absolute file name in the file system. Example:<br>
-     shapeType=\"file://C:/users/myname/shapes/piston.dxf\".</li>
+     shapeType=\"file:///C:/users/myname/shapes/piston.dxf\".</li>
 </ul>
 
 <p>

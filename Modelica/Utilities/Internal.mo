@@ -3,7 +3,7 @@ package Internal
   "Internal components that a user should usually not directly utilize"
   extends Modelica.Icons.InternalPackage;
   import Modelica.Units.SI;
-partial package PartialModelicaServices
+package PartialModelicaServices
     "Interfaces of components requiring a tool specific implementation"
     extends Modelica.Icons.InternalPackage;
   package Animation "Models and functions for 3-dim. animation"
@@ -44,7 +44,7 @@ This model is documented at
 
   end PartialShape;
 
-    model PartialVector "Interface for 3D animation of a vector quantity (force, torque etc)"
+    partial model PartialVector "Interface for 3D animation of a vector quantity (force, torque etc)"
       import Modelica.Mechanics.MultiBody.Types;
       import Modelica.Mechanics.MultiBody.Frames;
 
@@ -58,7 +58,7 @@ This model is documented at
         "Color of vector" annotation(Dialog(colorSelector=true));
       input Types.SpecularCoefficient specularCoefficient = 0.7
         "Material property describing the reflecting of ambient light (= 0 means, that light is completely absorbed)" annotation(Dialog);
-      input Types.VectorQuantity quantity = Types.VectorQuantity.Force "The quantity of the coordinates" annotation(Dialog);
+      parameter Types.VectorQuantity quantity = Types.VectorQuantity.Force "Quantity of the coordinates";
       input Boolean headAtOrigin=false "= true, if the vector is pointing towards the origin of vector frame" annotation(Dialog);
       input Boolean twoHeadedArrow=false "= true, if the arrow has two heads after each other (pointing in the same direction)" annotation(Dialog);
 
@@ -71,7 +71,7 @@ This model is documented at
 </html>"));
     end PartialVector;
 
-    model PartialSurface "Interface for 3D animation of surfaces"
+    partial model PartialSurface "Interface for 3D animation of surfaces"
 
       import Modelica.Mechanics.MultiBody.Frames;
       import Modelica.Mechanics.MultiBody.Types;
